@@ -1,0 +1,10 @@
+{
+	"language": "Solidity",
+	"sources":
+	{
+		"":
+		{
+			"content": "contract C { uint[] constant c; }"
+		}
+	}
+}
