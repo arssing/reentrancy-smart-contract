@@ -21,6 +21,7 @@ pip install -r requirements.txt
 python main.py
 ```
 ### Example output
+```shell
 INFO:root:contracts/PrivateBank.sol развернут по адресу: 0xdda608f4e5626a48a7de3b3223793c49f66780c8
 INFO:root:Взаимодействуем с контрактом contracts/PrivateBank.sol:
 INFO:root:Отправлено 2 eth через функцию Deposit()
@@ -28,3 +29,4 @@ INFO:root:Отправлен 1 eth через функцию Deposit() со см
 INFO:root:Взаимодействие с CashOut(uint256) функцией через контракт Attacker
 WARNING:root:Найдена реентерабельная функция CashOut(uint256) в контракте contracts/PrivateBank.sol:
 INFO:root:Баланс: до=3.0; после=1.0
+```
