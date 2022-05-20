@@ -13,7 +13,8 @@ Create new account with password and start geth:
 geth --datadir data account new
 geth --datadir node1 --unlock "<address>" console
 ```
-Stop it (ctrl+C), change GETH_PATH_TO_IPC in config.py to your IPC url
+Stop it (ctrl+C), change GETH_PATH_TO_IPC in config.py to your IPC url.
+Start script:
 ```shell
 python3 -m venv env
 source env/bin/activate
