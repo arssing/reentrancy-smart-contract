@@ -11,7 +11,7 @@
 Create new account with password and start geth:
 ```shell
 geth --datadir data account new
-geth --datadir node1 --unlock "<address>" console
+geth --datadir data --unlock "<address>" console
 ```
 Stop it (ctrl+C), change GETH_PATH_TO_IPC in config.py to your IPC url.
 Start script:
