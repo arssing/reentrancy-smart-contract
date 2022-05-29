@@ -70,7 +70,11 @@ def main():
     contracts_list = get_files_by_folder("contracts",".sol")
 
     for contract in contracts_list:
-        bytecode, abi = compile_sol_get_data(f"contracts/{contract}")
+        try:
+            bytecode, abi = compile_sol_get_data(f"contracts/{contract}")
+        except Exception:
+            logger.critical(f"не удалось скомпилировать: contracts/{contract}")
+            return
         funcs = get_target_function(abi, ['view','nonpayable','payable'])
         contracts[f"contracts/{contract}"] = {"abi": abi, "functions": funcs, "bytecode":bytecode}
     logger.info(f"Все контраты скомпилированы:{list(contracts.keys())}")
@@ -144,7 +148,7 @@ def main():
             for nonpayable in contracts[contract]["functions"]["nonpayable"]:
 
                 try:
-                    called_func = get_calldata(nonpayable)
+                    called_func = get_calldata(nonpayable, attacker_address)
                     if called_func == -1:
                         logger.info(f"Не можем обработать nonpayable функцию:{nonpayable}")
                         break
